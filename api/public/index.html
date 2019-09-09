@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    <title>T</title>
+    <link rel="shortcut icon" href="#" />
+    <script src="https://cdn.bootcss.com/socket.io/2.0.4/socket.io.js"></script>
+</head>
+<style>
+    .main {}
+
+    .otherBox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .user {
+        height: 100px;
+        width: 100px;
+        position: relative;
+        border: 1px solid red;
+    }
+
+    .user-head {
+        height: 100px;
+        width: 100px;
+    }
+
+    .user-pokeBox {
+        height: 40px;
+        width: 90px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        display: flex;
+    }
+
+    .user-pokeOneBox {
+        width: 30px;
+    }
+
+    .user-pokeOne {
+        border: 1px solid green;
+        width: 30px;
+        height: 40px;
+    }
+
+    .user-state {
+        width: 30px;
+        height: 30px;
+        z-index: 4;
+        position: absolute;
+        right: 0;
+    }
+
+    .user-nowState {
+        top: 0;
+    }
+
+    .user-isRoom {
+        top: 30px;
+    }
+
+    .mySit {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    button {
+        height: 60px;
+        width: 200px;
+        font-size: 30px;
+    }
+
+    .poke {
+        background: url(./cards.png);
+    }
+
+    /* .user{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 100px;
+    } */
+
+    .my-pokeBox {
+        height: 68px;
+        width: 200px;
+        bottom: 0;
+        right: 0;
+    }
+
+    .my-pokeOneBox {
+        width: 65px;
+    }
+
+    .my-pokeOne {
+        width: 65px;
+        height: 66px;
+    }
+    .my-userName{
+        position: absolute;
+        z-index: 10;
+        color: red;
+        /* top: -20px; */
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="otherBox">
+            <!-- <div class="user">
+                <img class="user-head" src="./qq.png" alt="">
+                <div class="user-pokeBox">
+                    <div class="user-pokeOneBox">
+                        <img class="user-pokeOne" src="./qq.png" alt="">
+                    </div>
+                    <div class="user-pokeOneBox">
+                        <img class="user-pokeOne" src="./qq.png" alt="">
+                    </div>
+                    <div class="user-pokeOneBox">
+                        <img class="user-pokeOne" src="./qq.png" alt="">
+                    </div>
+                </div>
+                <img class="user-state user-nowState" src="./person.png" alt="">
+                <img class="user-state user-isRoom" src="./set.png" alt="">
+            </div> -->
+        </div>
+        <div class="mySit">
+            <img src="./qq.png" alt="">
+            <div>
+                <button id='ready'>ready</button>
+                <button style="display: none;" id='sendPoke'>send</button>
+            </div>
+            <div class="user-pokeBox my-pokeBox">
+                <div class="user-pokeOneBox my-pokeOneBox">
+                    <img class="user-pokeOne my-pokeOne" src="./qq.png" alt="">
+                </div>
+                <div class="user-pokeOneBox my-pokeOneBox">
+                    <img class="user-pokeOne my-pokeOne" src="./qq.png" alt="">
+                </div>
+                <div class="user-pokeOneBox my-pokeOneBox">
+                    <img class="user-pokeOne my-pokeOne" src="./qq.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript" src="./capti.js"></script>
+</body>
+
+</html>
