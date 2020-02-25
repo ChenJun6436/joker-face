@@ -8,7 +8,7 @@ import axios from 'axios'
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 Vue.use(new VueSocketio({
-  connection: 'ws://192.168.10.197:3000/',
+  connection: 'ws://192.168.10.185:3000/',
 }))
 
 

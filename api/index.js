@@ -71,8 +71,9 @@ app.post('/register', function (req, res) {
     let toData = {
         msg: '新增成功',
         code: 1,
+        data: true
     }
-    connection.query('SELECT * FROM user where userName=' + data.userName + ' or userPlayName=' + data.userPlayName, function selectCb(err, results) {
+    connection.query('SELECT * FROM user where userName="' + data.userName + '" or userPlayName="' + data.userPlayName + '"', function selectCb(err, results) {
         if (err) {
             throw err;
         }
@@ -80,10 +81,10 @@ app.post('/register', function (req, res) {
             toData.msg = '已存在账号或昵称，请换一个试试'
             toData.code = 0
         } else {
-            connection.query('INSERT INTO user(id,userName,userPassWord,userPlayName) VALUES(uuid(),' + data.userName + ',' + data.userPassWord + ',' + data.userPlayName + ')', function (error, res, data) {
+            connection.query('INSERT INTO user(id,userName,userPassWord,userPlayName) VALUES(uuid(),"' + data.userName + '","' + data.userPassWord + '","' + data.userPlayName + '")', function (error, res, data) {
+                toData.msg = '网络错误，请稍后重试'
+                toData.code = 0
                 if (error) throw error;
-                console.log(res)
-                console.log(data)
             })
         }
         res.jsonp(toData)
@@ -95,9 +96,9 @@ app.post('/login', function (req, res) {
     let toData = {
         msg: '登陆成功',
         code: 1,
-        data: null,
+        data: true,
     }
-    connection.query('SELECT * FROM user where userName=' + data.userName + ' && userPassWord=' + data.userPassWord, function selectCb(err, results) {
+    connection.query('SELECT * FROM user where userName="' + data.userName + '" && userPassWord="' + data.userPassWord + '"', function selectCb(err, results) {
         if (err) {
             throw err;
         }

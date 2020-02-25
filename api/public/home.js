@@ -40,7 +40,7 @@ $(function () {
     function getUserIp(){
         $.ajax({
             type: "GET",
-            url: 'http://192.168.10.197:3000' + "/b",
+            url: 'http://192.168.10.185:3000' + "/b",
             dataType:'json',
             headers:{
               'Content-Type': 'application/json',

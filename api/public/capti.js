@@ -1,7 +1,7 @@
 //操作事件
 $(function () {
     //连接websocket后端服务器
-    var socket = io.connect('ws://192.168.10.197:3000/')
+    var socket = io.connect('ws://192.168.10.185:3000/')
     //所有用户
     var allUsers = []
     //当前用户
@@ -428,7 +428,7 @@ $(function () {
     //             };
     //             $.ajax({
     //                 type: "GET",
-    //                 url: 'http://192.168.10.197:3000' + "/a",
+    //                 url: 'http://192.168.10.185:3000' + "/a",
     //                 dataType: 'json',
     //                 headers: {
     //                     'Content-Type': 'application/json',
@@ -506,7 +506,7 @@ $(function () {
     //         this.scrollToBottom();
 
     //         //连接websocket后端服务器
-    //         this.socket = io.connect('ws://192.168.10.197:3000/');
+    //         this.socket = io.connect('ws://192.168.10.185:3000/');
 
     //         //告诉服务器端有用户登录
     //         this.socket.emit('login', { userid: this.userid, username: this.username });

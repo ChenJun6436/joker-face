@@ -5,7 +5,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 
-const baseURL = 'http://192.168.10.197:3000'
+const baseURL = 'http://192.168.10.185:3000'
 
 //axios的跨域session设置为true，不配置session会丢失,每次请求都不同。
 axios.defaults.withCredentials = true;
@@ -142,7 +142,7 @@ export const push = function (url, data) {
 }
 ///
 export const Url = function () {
-  let URL = 'http://192.168.10.197:3000'
+  let URL = 'http://192.168.10.185:3000'
   return URL
 }
 
